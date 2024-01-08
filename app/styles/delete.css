@@ -1,0 +1,64 @@
+#note-form {
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: var(--color-3);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+#note-form label,
+#note-form h2 {
+  display: block;
+  text-align: center;
+}
+
+#note-form h2 {
+  margin-top: 0px;
+  color: var(--color-10);
+}
+
+#note-form label {
+  color: var(--color-9);
+  font-size: 1.15rem;
+  white-space: pre-wrap;
+}
+
+.form-actions {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  background-color: var(--color-8);
+  color: var(--color-1);
+}
+
+.form-actions #annulla {
+  background-color: var(--color-3);
+  color: var(--color-8);
+}
+
+.form-actions #annulla:hover {
+  color: var(--color-10);
+}
+
+.form-actions button:hover {
+  background-color: var(--color-10);
+}
+
+.form-actions button:disabled {
+  background-color: #001160;
+  color: var(--color-2);
+  cursor: not-allowed;
+}

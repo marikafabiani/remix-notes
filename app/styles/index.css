@@ -1,0 +1,28 @@
+#content {
+  text-align: center;
+  color: var(--color-10);
+  margin: 1rem auto;
+}
+
+#content p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+#cta {
+  margin-top: 2rem;
+}
+
+#cta a {
+  text-decoration: none;
+  background-color: var(--color-8);
+  color: var(--color-1);
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+
+#cta a:hover {
+  background-color: var(--color-10);
+}
