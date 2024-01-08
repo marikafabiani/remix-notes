@@ -10,9 +10,7 @@ export default function DeletePage() {
     <Form method="post" id="note-form">
       <h2>Delete note</h2>
       <p>
-        <label>
-          Are you sure you want to delete the note &quot;{note.title}&quot;?
-        </label>
+        <label>Are you sure you want to delete &quot;{note.title}&quot;?</label>
       </p>
       <input name="id" type="hidden" value={note.id} />
       <div className="form-actions">
