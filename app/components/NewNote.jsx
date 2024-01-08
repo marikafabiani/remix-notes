@@ -1,30 +1,28 @@
 import { Form, useNavigation } from "@remix-run/react";
 import stylesNote from "./NewNote.css";
 
-function NewNote() {
+export default function NewNote() {
   const navigation = useNavigation();
 
   const isSubmitting = navigation.state === "submitting";
 
   return (
     <Form method="post" id="note-form">
-      <h2>Aggiungi una nota</h2>
+      <h2>Add a note</h2>
       <p>
-        <label htmlFor="title">Titolo</label>
+        <label htmlFor="title">Title</label>
         <input type="text" id="title" name="title" required />
       </p>
       <p>
-        <label htmlFor="content">Contenuto</label>
+        <label htmlFor="content">Content</label>
         <textarea id="content" name="content" rows={5} required />
       </p>
       <div className="form-actions">
-        <button>{isSubmitting ? "Caricamento..." : "Aggiungi una nota"}</button>
+        <button>{isSubmitting ? "Submitting..." : "Add a note"}</button>
       </div>
     </Form>
   );
 }
-
-export default NewNote;
 
 export function links() {
   return [{ rel: "stylesheet", href: stylesNote }];

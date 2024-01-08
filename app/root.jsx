@@ -58,7 +58,7 @@ export const ErrorBoundary = () => {
             <h1>{routeError.statusText}</h1>
             <p>{routeError.data?.message || "Qualcosa è andato storto!"}</p>
             <p>
-              Torna alla <Link to="/">home</Link>!
+              Back to <Link to="/">home</Link>!
             </p>
           </main>
           <ScrollRestoration />
@@ -80,10 +80,10 @@ export const ErrorBoundary = () => {
       </head>
       <body>
         <main className="error">
-          <h1>Errore relativo alle note</h1>
+          <h1>An error occurred!</h1>
           <p>{message}</p>
           <p>
-            Torna alla <Link to="/">home</Link>!
+            Back <Link to="/">home</Link>!
           </p>
         </main>
         <ScrollRestoration />

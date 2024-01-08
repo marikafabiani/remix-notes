@@ -10,7 +10,7 @@ import {
 } from "@remix-run/react";
 
 export const meta = () => {
-  return [{ title: "Aggiungi una nota" }];
+  return [{ title: "Add a note" }];
 };
 
 export default function Notes() {
@@ -23,10 +23,6 @@ export default function Notes() {
     </>
   );
 }
-
-export const links = () => {
-  return [...newNoteLinks(), ...noteListLinks()];
-};
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -43,7 +39,7 @@ export async function loader() {
   if (!notes || notes.length === 0) {
     throw json(
       {
-        message: "Non ci sono note da mostrare",
+        message: "There are no notes",
       },
       {
         status: 404,
@@ -57,26 +53,32 @@ export async function loader() {
 export function ErrorBoundary() {
   const routeError = useRouteError();
   console.log(routeError);
-  const message = routeError.message || "Oops! Qualcosa è andato storto";
+  const message = routeError.message || "Oops! Something went wrong";
 
   if (isRouteErrorResponse(routeError)) {
     return (
-      <main className="info-message">
+      <>
         <NewNote />
-        <h1>Oops</h1>
-        <p>Status: {routeError.status}</p>
-        <p>{routeError.data?.message}</p>
-      </main>
+        <main className="info-message">
+          <h1>Oops</h1>
+          <p>Status: {routeError.status}</p>
+          <p>{routeError.data?.message}</p>
+        </main>
+      </>
     );
   }
 
   return (
     <main className="error">
-      <h1>Errore relativo alle note</h1>
+      <h1>An error related to your notes occurred!</h1>
       <p>{message}</p>
       <p>
-        Torna alla <Link to="/">home</Link>!
+        Back to <Link to="/">home</Link>!
       </p>
     </main>
   );
 }
+
+export const links = () => {
+  return [...newNoteLinks(), ...noteListLinks()];
+};

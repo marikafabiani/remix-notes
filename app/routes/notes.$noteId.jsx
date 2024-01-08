@@ -11,14 +11,14 @@ export default function NoteDetailsPage() {
       <main id="note-details">
         <header>
           <nav>
-            <Link to="/notes">Torna alle note</Link>
+            <Link to="/notes">Back to notes</Link>
           </nav>
           <h1>{note?.title}</h1>
         </header>
         <p id="note-details-content">{note?.content}</p>
         <div id="note-buttons">
           <Link to={"delete"}>
-            <button>Elimina</button>
+            <button>Delete</button>
           </Link>
         </div>
       </main>
@@ -28,7 +28,7 @@ export default function NoteDetailsPage() {
 }
 
 export const meta = ({ data }) => {
-  return [{ title: data.title, description: "Gestisci la nota" }];
+  return [{ title: data.title, description: "Manage the note" }];
 };
 
 export function links() {
@@ -42,7 +42,7 @@ export async function loader({ params }) {
   if (!selectedNote) {
     throw json(
       {
-        message: "Non è stato possibile trovare la nota " + noteId,
+        message: "Could not find the note " + noteId,
       },
       {
         status: 404,

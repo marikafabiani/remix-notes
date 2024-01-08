@@ -14,7 +14,7 @@ function NoteList({ notes }) {
                   <li>#{index + 1}</li>
                   <li>
                     <time dateTime={note.id}>
-                      {new Date(note.id).toLocaleDateString("en-US", {
+                      {new Date(note.id).toLocaleDateString("it-IT", {
                         day: "numeric",
                         month: "short",
                         year: "numeric",

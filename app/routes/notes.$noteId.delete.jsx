@@ -3,34 +3,31 @@ import { redirect } from "@remix-run/node";
 import { deleteNotes } from "../data/notes";
 import { Form, Link, useOutletContext } from "@remix-run/react";
 
-// eslint-disable-next-line react/prop-types
-function DeletePage() {
+export default function DeletePage() {
   const note = useOutletContext();
 
   return (
     <Form method="post" id="note-form">
-      <h2>Elimina nota</h2>
+      <h2>Delete note</h2>
       <p>
         <label>
-          Sei sicuro di voler eliminare la nota &quot;{note.title}&quot;?
+          Are you sure you want to delete the note &quot;{note.title}&quot;?
         </label>
       </p>
       <input name="id" type="hidden" value={note.id} />
       <div className="form-actions">
         <Link to={`/notes/${note.id}`}>
-          <button id="annulla" type="submit" name="action" value="annulla">
-            Annulla
+          <button id="cancel" type="submit" name="action" value="cancel">
+            Cancel
           </button>
         </Link>
-        <button id="elimina" type="submit" name="action" value="delete">
-          Elimina
+        <button id="delete" type="submit" name="action" value="delete">
+          Delete
         </button>
       </div>
     </Form>
   );
 }
-
-export default DeletePage;
 
 export function links() {
   return [{ rel: "stylesheet", href: stylesNote }];

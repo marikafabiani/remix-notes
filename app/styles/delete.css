@@ -44,12 +44,12 @@
   color: var(--color-1);
 }
 
-.form-actions #annulla {
+.form-actions #cancel {
   background-color: var(--color-3);
   color: var(--color-8);
 }
 
-.form-actions #annulla:hover {
+.form-actions #cancel:hover {
   color: var(--color-10);
 }
 
