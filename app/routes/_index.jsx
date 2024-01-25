@@ -1,5 +1,4 @@
 import stylesHome from "../styles/index.css";
-import { links as newNoteLinks } from "../components/NewNote";
 import { Link } from "@remix-run/react";
 
 export const meta = () => {
@@ -22,5 +21,5 @@ export default function HomePage() {
 }
 
 export const links = () => {
-  return [...newNoteLinks(), { rel: "stylesheet", href: stylesHome }];
+  return [{ rel: "stylesheet", href: stylesHome }];
 };

@@ -15,9 +15,7 @@ export default function DeletePage() {
       <input name="id" type="hidden" value={note.id} />
       <div className="form-actions">
         <Link to={`/notes/${note.id}`}>
-          <button id="cancel" type="submit" name="action" value="cancel">
-            Cancel
-          </button>
+          <button id="cancel">Cancel</button>
         </Link>
         <button id="delete" type="submit" name="action" value="delete">
           Delete
@@ -33,10 +31,7 @@ export function links() {
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const action = formData.get("action");
   const noteIdToDelete = formData.get("id");
-  if (action === "delete") {
-    await deleteNotes(noteIdToDelete);
-  }
+  await deleteNotes(noteIdToDelete);
   return redirect("/notes");
 }
